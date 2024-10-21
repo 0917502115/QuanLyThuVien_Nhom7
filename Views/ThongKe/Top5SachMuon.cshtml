@@ -1,0 +1,25 @@
+﻿@model List<QuanLyThuVien.Controllers.ThongKeController.TopSachMuonViewModel>
+
+@{
+    ViewBag.Title = "Top 5 Sách Được Mượn Nhiều Nhất";
+}
+
+<h2>Top 5 sách được mượn nhiều nhất</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên Sách</th>
+            <th>Số Lượt Mượn</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TenSach</td>
+                <td>@item.SoLuotMuon</td>
+            </tr>
+        }
+    </tbody>
+</table>

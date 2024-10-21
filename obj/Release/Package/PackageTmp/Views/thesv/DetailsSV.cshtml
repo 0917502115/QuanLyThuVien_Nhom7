@@ -1,0 +1,52 @@
+﻿@model QuanLyThuVien.Models.THESV
+
+@{
+    ViewBag.Title = "DetailsSV";
+}
+<head>
+    <style>
+        button {
+            border-radius: 5px;
+            border-width: 3px;
+        }
+    </style>
+</head>
+<h2>Chi tiết sinh viên <i>"@Html.DisplayFor(model => model.TenSV)"</i> </h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã sinh viên:<span style="color: blue;"> @Html.DisplayFor(model => model.MaSV)</span>
+
+        </dt>
+        <dt>
+            Tên sinh viên:<span style="color: blue;"> @Html.DisplayFor(model => model.TenSV)</span>
+        </dt>
+
+
+        <dt>
+            Ngành:<span style="color: blue;">  @Html.DisplayFor(model => model.Lop)</span>
+        </dt>
+
+        <dt>
+            Khóa:<span style="color: blue;">  @Html.DisplayFor(model => model.Khoa)</span>
+        </dt>
+
+        <dt>
+            Năm sinh:<span style="color: blue;"> @Html.DisplayFor(model => model.Namsinh)</span>
+        </dt>
+
+        <dt>
+            Số điện thoại:<span style="color: blue;">@Html.DisplayFor(model => model.SDT)</span>
+        </dt>
+        <dt>
+            Quê quán:<span style="color: blue;">@Html.DisplayFor(model => model.Quequan)</span>
+        </dt>
+    </dl>
+</div>
+<p>
+    <button style="background-color: aquamarine;"> @Html.ActionLink("Sửa", "EditSV", new { MaSV = Model.MaSV }) </button> &ensp;
+    <button style="background-color: aqua;"> @Html.ActionLink("Quay lại", "ListSV")</button>
+</p>

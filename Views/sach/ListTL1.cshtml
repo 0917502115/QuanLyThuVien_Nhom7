@@ -1,0 +1,37 @@
+﻿@model IEnumerable<QuanLyThuVien.Models.THELOAI>
+
+@{
+    ViewBag.Title = "ListTL1";
+}
+
+<h2>ListTL1</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên thể loại
+        </th>
+        <th>
+            Mã thể loại
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaTL)
+        </td>
+    </tr>
+}
+
+</table>
+<button style="background-color: aqua;"> @Html.ActionLink("Quay lại", "CreateSach")</button>

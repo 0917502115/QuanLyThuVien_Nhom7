@@ -1,0 +1,55 @@
+﻿@model QuanLyThuVien.Models.THELOAI
+
+@{
+    ViewBag.Title = "CreateTL";
+}
+<head>
+    <style>
+        button {
+            border: 2px solid;
+            border-radius: 5px;
+            width: 80px;
+            height: 35px;
+        }
+
+        input {
+            border: 2px solid;
+            border-radius: 5px;
+            width: 80px;
+            height: 35px;
+        }
+    </style>
+</head>
+<h2>Thêm thể loại</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>THELOAI</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.TenTL, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TenTL, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenTL, "", new { @class = "text-danger" })
+        </div>
+    </div><br />
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input style="border: 2px solid; border-radius: 5px; width: 80px; height: 35px;" type="submit" value="Thêm" class="btn btn-default" />   &ensp;
+            <button style="background-color: aqua;"> @Html.ActionLink("Quay lại", "ListTL")</button>
+        </div>
+    </div>
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="thuvien">
+  <DataContextMoniker Name="/thuvienDataContext" />
+  <nestedChildShapes>
+    <classShape Id="188209bd-ffc6-4acf-b996-d46562522f82" absoluteBounds="0.75, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/thuvienDataContext/MUONTRA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6accee2b-8c6a-45f2-a6ab-b66f0578a0c0" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="21474a77-b1c5-4f5c-b2dc-51e996b7259a" absoluteBounds="3.5, 0.875, 2, 1.9631982421874998">
+      <DataClassMoniker Name="/thuvienDataContext/SACH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7f08050-9404-45f7-a38e-3e72a0637c59" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8fd5a09d-0e43-4084-947d-da103f7582bd" absoluteBounds="0.75, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/thuvienDataContext/THELOAI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2560392b-2f15-4832-b973-f2261cf9aeaf" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b9b3fe5a-73b9-4160-bf12-0845821a78c7" absoluteBounds="3.75, 3.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/thuvienDataContext/THESV" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8c1f90e2-648f-4cae-8945-3e3fa6cbdcf7" absoluteBounds="3.765, 4.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.5 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/thuvienDataContext/THELOAI/THELOAI_SACH" />
+      <nodes>
+        <classShapeMoniker Id="8fd5a09d-0e43-4084-947d-da103f7582bd" />
+        <classShapeMoniker Id="21474a77-b1c5-4f5c-b2dc-51e996b7259a" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

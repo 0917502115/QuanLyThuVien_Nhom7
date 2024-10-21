@@ -1,0 +1,69 @@
+﻿@model IEnumerable<QuanLyThuVien.Models.THESV>
+
+@{
+    ViewBag.Title = "ListSV";
+}
+<head>
+    <style>
+        button {
+            border-radius: 5px;
+            border-width: 3px;
+        }
+    </style>
+</head>
+<h2>Danh sách thẻ thư viện</h2>
+
+<p>
+    <button style="background-color:lawngreen"><b> @Html.ActionLink("Thêm sinh viên", "CreateSV")</b></button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên sinh viên
+        </th>
+        <th>
+            Lớp
+        </th>
+        <th>
+            Khoa
+        <th>
+            Năm sinh
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Quê quán
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Khoa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Namsinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quequan)
+        </td>
+        <td>
+            <button style="background-color: aquamarine;"><b> @Html.ActionLink("Sửa", "EditSV", new { MaSV = item.MaSV })</b> </button>
+            <button style="background-color: lightpink; "><b> @Html.ActionLink("Chi tiết", "DetailsSV", new { id = item.MaSV })</b> </button>
+            <button style="background-color: red; "><b> @Html.ActionLink("Xóa", "DeleteSV", new { MaSV = item.MaSV })</b></button>
+        </td>
+    </tr>
+}
+
+</table>

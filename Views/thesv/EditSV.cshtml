@@ -1,0 +1,96 @@
+﻿@model QuanLyThuVien.Models.THESV
+
+@{
+    ViewBag.Title = "EditSV";
+}
+<head>
+    <style>
+        button {
+            border: 2px solid;
+            border-radius: 5px;
+            width: 80px;
+            height: 35px;
+        }
+
+        input {
+            border: 2px solid;
+            border-radius: 5px;
+            width: 80px;
+            height: 35px;
+        }
+    </style>
+</head>
+<h2>Sửa thẻ sinh viên </h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaSV)
+
+        <div class="form-group">
+            <p>Tên sinh viên</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenSV, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenSV, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p>Nghành</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Lop, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Lop, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p>Khóa</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Khoa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Khoa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Namsinh, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Namsinh, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Namsinh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           <p>Số điện thoại</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p>Quê quán</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quequan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quequan, "", new { @class = "text-danger" })
+            </div>
+        </div><br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input style="border-radius: 5px; border: 2px solid; background-color: antiquewhite;" type="submit" value="Lưu" class="btn btn-default" />&ensp;
+                <button style="border-radius: 5px; border: 2px solid; background-color: aqua;"> @Html.ActionLink("Quay lại", "ListSV")</button>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

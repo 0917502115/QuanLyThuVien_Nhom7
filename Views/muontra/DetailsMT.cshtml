@@ -1,0 +1,52 @@
+﻿@model QuanLyThuVien.Models.MUONTRA
+
+@{
+    ViewBag.Title = "DetailsMT";
+}
+<head>
+    <style>
+        button {
+            border-radius: 5px;
+            border-width: 3px;
+        }
+    </style>
+</head>
+<h2>Chi tiết mượn trả</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Mã mượn trả:<span style="color: blue;"> @Html.DisplayFor(model => model.MaMuon)</span>
+
+        </dt>
+        <dt>
+            Tên sinh viên:<span style="color: blue;"> @Html.DisplayFor(model => model.TenSV)</span>
+        </dt>
+
+
+        <dt>
+            Tên sách:<span style="color: blue;">  @Html.DisplayFor(model => model.TenSach)</span>
+        </dt>
+
+        <dt>
+            Trạng thái:<span style="color: blue;">  @Html.DisplayFor(model => model.TrangThai)</span>
+        </dt>
+
+        <dt>
+            Ngày mượn:<span style="color: blue;"> @Html.DisplayFor(model => model.Ngaymuon)</span>
+        </dt>
+
+        <dt>
+            Ngày trả:<span style="color: blue;">@Html.DisplayFor(model => model.Ngaytra)</span>
+        </dt>
+
+    </dl>
+</div>
+<p>
+    <button style="background-color: aquamarine;"> @Html.ActionLink("Sửa", "EditMT", new { MaMuon = Model.MaMuon }) </button> &ensp;
+    <button style="background-color: aqua;"> @Html.ActionLink("Quay lại", "ListMT")</button>
+</p>
+

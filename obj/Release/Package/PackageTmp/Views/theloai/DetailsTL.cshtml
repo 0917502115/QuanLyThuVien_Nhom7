@@ -1,0 +1,34 @@
+﻿@model QuanLyThuVien.Models.THELOAI
+
+@{
+    ViewBag.Title = "DetailsTL";
+}
+<head>
+    <style>
+        button {
+            border-radius: 5px;
+            border-width: 3px;
+        }
+    </style>
+</head>
+<h2>Chi tiết thể loại <i>"@Html.DisplayFor(model => model.TenTL)"</i></h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã thể loại:<span style="color: blue;">  @Html.DisplayFor(model => model.MaTL)</span>
+</dt>
+        <dt>
+            Tên thể loại: <span style="color: blue;"> @Html.DisplayFor(model => model.TenTL)</span>
+</dt>
+
+        
+
+    </dl>
+</div>
+<p>
+    <button style="background-color: aquamarine;"> @Html.ActionLink("Sửa", "EditTL", new { MaTL = Model.MaTL }) </button> &ensp;
+    <button style="background-color: aqua;"> @Html.ActionLink("Quay lại", "ListTL")</button>
+</p>

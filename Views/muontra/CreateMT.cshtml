@@ -1,0 +1,86 @@
+﻿@model QuanLyThuVien.Models.MUONTRA
+
+@{
+    ViewBag.Title = "CreateMT";
+}
+<head>
+    <style>
+        button {
+            border: 2px solid;
+            border-radius: 5px;
+            width: 80px;
+            height: 35px;
+        }
+
+        input {
+            border: 2px solid;
+            border-radius: 5px;
+            width: 80px;
+            height: 35px;
+        }
+    </style>
+</head>
+<h2>Thêm phiếu mượn sách</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <p>Tên sinh viên</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenSV, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenSV, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p>Tên sách</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenSach, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenSach, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p>Trạng thái</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TrangThai, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TrangThai, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           <p>Ngày mượn</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ngaymuon, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ngaymuon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p>Ngày trả</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ngaytra, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ngaytra, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input style="border: 2px solid; border-radius: 5px; width: 80px; height: 35px;" type="submit" value="Thêm" class="btn btn-default" />   &ensp;
+                <button style="background-color: aqua;"> @Html.ActionLink("Quay lại", "ListMT")</button>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Thuvien" Class="thuvienDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.MUONTRA" Member="MUONTRAs">
+    <Type Name="MUONTRA">
+      <Column Name="MaMuon" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenSV" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TenSach" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Ngaymuon" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Ngaytra" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SACH" Member="SACHes">
+    <Type Name="SACH">
+      <Column Name="MaSach" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Theloai" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Tacgia" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NamXB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaTL" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="THELOAI_SACH" Member="THELOAI1" ThisKey="MaTL" OtherKey="MaTL" Type="THELOAI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THELOAI" Member="THELOAIs">
+    <Type Name="THELOAI">
+      <Column Name="MaTL" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="THELOAI_SACH" Member="SACHes" ThisKey="MaTL" OtherKey="MaTL" Type="SACH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THESV" Member="THESVs">
+    <Type Name="THESV">
+      <Column Name="MaSV" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenSV" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Lop" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Khoa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Namsinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Quequan" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

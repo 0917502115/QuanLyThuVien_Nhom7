@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ThuvienConnectionString-Web.config Connection String" description="ThuvienConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=DEMON\SQLEXPRESS;Initial Catalog=Thuvien;Integrated Security=True;Encrypt=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Huy\\LapTrinhWeb\\Nhom5\.CK\\QuanLyThuVien\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ThuvienConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

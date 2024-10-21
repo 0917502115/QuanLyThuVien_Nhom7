@@ -1,0 +1,64 @@
+﻿@model IEnumerable<QuanLyThuVien.Models.MUONTRA>
+
+@{
+    ViewBag.Title = "ListMT";
+}
+<head>
+    <style>
+        button {
+            border-radius: 5px;
+            border-width: 3px;
+        }
+    </style>
+</head>
+<h2>Danh sách mượn trả</h2>
+
+<p>
+    <button style="background-color:lawngreen"> @Html.ActionLink("Thêm phiếu mượn", "CreateMT")</button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên sinh viên
+        </th>
+        <th>
+            Tên sách
+        </th>
+        <th>
+            Trạng thái<br /> <i style="color:red">(True - Đã trả | False - Chưa trả)</i>
+        </th>
+        <th>
+            Ngày mượn
+        </th>
+        <th>
+            Ngày trả
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaymuon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaytra)
+        </td>
+        <td>
+            <button style="background-color: aquamarine;"> @Html.ActionLink("Sửa", "EditMT", new { MaMuon = item.MaMuon }) </button>&ensp;
+            <button style="background-color: lightpink; "> @Html.ActionLink("Chi tiết", "DetailsMT", new { id = item.MaMuon }) </button>&ensp;
+            <button style="background-color: red; "> @Html.ActionLink("Xóa", "DeleteMT", new { MaMuon = item.MaMuon })</button>
+        </td>
+    </tr>
+}
+
+</table>

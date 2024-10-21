@@ -1,0 +1,48 @@
+﻿@model QuanLyThuVien.Models.SACH
+
+@{
+    ViewBag.Title = "DetailsSach";
+}
+<head>
+    <style>
+        button {
+            border-radius: 5px;
+            border-width: 3px;
+        }
+    </style>
+</head>
+<h2>Chi tiết sách <i>"@Html.DisplayFor(model => model.TenSach)"</i></h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã sách:<span style="color: blue;"> @Html.DisplayFor(model => model.MaSach)</span>
+
+        </dt>
+        <dt>
+            Tên sách:<span style="color: blue;"> @Html.DisplayFor(model => model.TenSach)</span>
+        </dt>
+
+
+        <dt>
+            Thể loại:<span style="color: blue;">  @Html.DisplayFor(model => model.Theloai)</span>
+        </dt>
+
+        <dt>
+            Mã thể loại:<span style="color: blue;">  @Html.DisplayFor(model => model.MaTL)</span>
+        </dt>
+
+        <dt>
+            Tác giả:<span style="color: blue;"> @Html.DisplayFor(model => model.Tacgia)</span>
+        </dt>
+
+        <dt>
+            Năm xuất bản:<span style="color: blue;">@Html.DisplayFor(model => model.NamXB)</span>
+        </dt>
+    </dl>
+</div>
+<p>
+    <button style="background-color: aquamarine;"> @Html.ActionLink("Sửa", "EditSach", new { MaSach = Model.MaSach }) </button> &ensp;
+    <button style="background-color: aqua;"> @Html.ActionLink("Quay lại", "ListSach")</button>
+</p>
